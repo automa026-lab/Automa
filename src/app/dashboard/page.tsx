@@ -10,16 +10,31 @@ export default function PaginaDashboard() {
   const [cargando, setCargando] = useState(true);
 
   useEffect(() => {
-    const supabase = crearClienteSupabase();
+    async function verificarUsuario() {
+      const supabase = crearClienteSupabase();
+      const { data: { user } } = await supabase.auth.getUser();
 
-    supabase.auth.getUser().then(({ data }) => {
-      if (!data.user) {
+      if (!user) {
         router.replace("/login");
         return;
       }
-      setEmail(data.user.email ?? null);
+
+      const { data: tienda } = await supabase
+        .from("tiendas")
+        .select("id")
+        .eq("usuario_id", user.id)
+        .single();
+
+      if (!tienda) {
+        router.replace("/wizard");
+        return;
+      }
+
+      setEmail(user.email ?? null);
       setCargando(false);
-    });
+    }
+
+    verificarUsuario();
   }, [router]);
 
   async function cerrarSesion() {

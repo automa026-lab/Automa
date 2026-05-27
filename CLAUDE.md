@@ -1,5 +1,5 @@
 CLAUDE.md — Memoria Maestra del Proyecto
-Este archivo va en la raíz del repositorio. Claude Code lo lee automáticamente en cada sesión. Mantenerlo CORTO y actualizado. Es la fuente de verdad del contexto. No duplicar info. Última actualización: [26 de mayo de 2026]
+Este archivo va en la raíz del repositorio. Claude Code lo lee automáticamente en cada sesión. Mantenerlo CORTO y actualizado. Es la fuente de verdad del contexto. No duplicar info. Última actualización: [27 de mayo de 2026]
 
 
 1. Qué estamos construyendo (en una frase)
@@ -8,7 +8,8 @@ Plataforma todo-en-uno para que personas de LATAM, sin conocimientos técnicos, 
 Fase: 1 — Prototipo (web)
 Caso de uso v1: Tienda propia integrada (dropshipping) + Shopify como opción secundaria
 Modelo de retención elegido: Híbrido — tienda propia 100% en nuestra infraestructura (retención por valor) + opción de conectar Shopify existente
-Lo último que se construyó: Registro / login con Supabase Auth (2026-05-27) — páginas /registro, /login, /dashboard básico, cliente Supabase en src/lib/supabase.ts.
+Lo último que se construyó: Fix de configuración (2026-05-27) — .env.local de la raíz tenía placeholders ("TU-PROYECTO"); las claves reales estaban en Docs/.env.local (lugar incorrecto). Se corrigió: valores reales movidos a la raíz, Docs/.env.local eliminado. Supabase Auth ya conecta correctamente.
+Anterior: Registro / login con Supabase Auth — páginas /registro, /login, /dashboard básico, cliente Supabase en src/lib/supabase.ts.
 Lo siguiente a construir: Dashboard → Wizard de onboarding (spec-001, paso 4).
 3. Modelo de negocio (decidido)
 Freemium: funciones básicas gratis.
