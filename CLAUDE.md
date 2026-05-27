@@ -8,8 +8,8 @@ Plataforma todo-en-uno para que personas de LATAM, sin conocimientos técnicos, 
 Fase: 1 — Prototipo (web)
 Caso de uso v1: Tienda propia integrada (dropshipping) + Shopify como opción secundaria
 Modelo de retención elegido: Híbrido — tienda propia 100% en nuestra infraestructura (retención por valor) + opción de conectar Shopify existente
-Lo último que se construyó: Landing page rediseñada (2026-05-26) — hero + 3 beneficios + footer, paleta stone/amber, solo Tailwind, responsive.
-Lo siguiente a construir: Registro / login con Supabase Auth (spec-001, paso 2).
+Lo último que se construyó: Registro / login con Supabase Auth (2026-05-27) — páginas /registro, /login, /dashboard básico, cliente Supabase en src/lib/supabase.ts.
+Lo siguiente a construir: Dashboard → Wizard de onboarding (spec-001, paso 4).
 3. Modelo de negocio (decidido)
 Freemium: funciones básicas gratis.
 Suscripción por niveles (tiers) para funciones avanzadas.
